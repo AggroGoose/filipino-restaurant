@@ -8,6 +8,13 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	type DetailItem = {
+		id: number;
+		title: string;
+		description: string;
+		priceCents: number;
+	};
 }
 
 export {};

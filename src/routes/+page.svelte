@@ -1,2 +1,9 @@
-<h1 class="text-5xl font-bold text-center">Home Page</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import Content from './sections/Content.svelte';
+	import Hero from './sections/Hero.svelte';
+	import Photos from './sections/Photos.svelte';
+</script>
+
+<Hero />
+<Photos />
+<Content />

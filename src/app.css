@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--font-primary: 'Bantayog';
+	--font-secondary: 'Fatta Bossa';
+}
+
+body {
+	font-family: var(--font-primary);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-secondary);
+	color: #423ef9;
+}
