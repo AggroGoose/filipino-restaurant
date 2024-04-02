@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="w-full max-w-[950px] mx-auto flex flex-col items-center gap-8 py-6 text-center text-[2rem] leading-[1.15]"
+	class="w-full max-w-[950px] mx-auto flex flex-col items-center gap-8 py-16 text-center text-[2rem] leading-[1.15]"
 >
 	<a href="/" class="hover:opacity-65"><HoyMamiText className="aspect-[1920/865] w-48" /></a>
 	<h1 class="text-5xl">@Downtownsville</h1>

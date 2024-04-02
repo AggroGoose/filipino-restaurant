@@ -2,7 +2,8 @@
 	import MenuHead from './sections/MenuHead.svelte';
 	import mamiImg from '$lib/assets/images/Mami Noodle - No BG.png';
 	import MenuSection from './sections/MenuSection.svelte';
-	import MenuItem from './sections/MenuItem.svelte';
+	import LargeItem from './sections/LargeItem.svelte';
+	import SmallItem from './sections/SmallItem.svelte';
 
 	const mamiImgObj = {
 		src: mamiImg,
@@ -15,10 +16,16 @@
 	let { data } = $props();
 	const {
 		mami,
-		pancit
+		pancit,
+		lumpia,
+		drinks,
+		desserts
 	}: {
-		mami: DetailItem[];
-		pancit: DetailItem[];
+		mami: FbDocDesc[];
+		pancit: FbDocDesc[];
+		lumpia: FbDoc[];
+		drinks: FbDoc[];
+		desserts: FbDoc[];
 	} = data;
 </script>
 
@@ -29,13 +36,8 @@
 	image={mamiImgObj}
 />
 <div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4">
-	{#each mami as item}
-		<MenuItem
-			id={item.id}
-			title={item.title}
-			description={item.description}
-			price={item.priceCents}
-		/>
+	{#each mami as item, index}
+		<LargeItem id={index} title={item.title} description={item.description} price={item.price} />
 	{/each}
 </div>
 <MenuSection
@@ -44,13 +46,8 @@
 	image={mamiImgObj}
 />
 <div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4">
-	{#each pancit as item}
-		<MenuItem
-			id={item.id}
-			title={item.title}
-			description={item.description}
-			price={item.priceCents}
-		/>
+	{#each pancit as item, index}
+		<LargeItem id={index} title={item.title} description={item.description} price={item.price} />
 	{/each}
 </div>
 <MenuSection
@@ -58,16 +55,28 @@
 	description="Crispy, crunchy, and craveable - These Filipino spring rolls are deep fried and ready to rock! Share 'em, dip 'em, enjoy!"
 	image={mamiImgObj}
 />
-<div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4"></div>
+<div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4">
+	{#each lumpia as item, index}
+		<SmallItem id={index} title={item.title} price={item.price} />
+	{/each}
+</div>
 <MenuSection
 	title="Beverages"
 	description="Crispy, crunchy, and craveable - These Filipino spring rolls are deep fried and ready to rock! Share 'em, dip 'em, enjoy!"
 	image={mamiImgObj}
 />
-<div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4"></div>
+<div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4">
+	{#each drinks as item, index}
+		<SmallItem id={index} title={item.title} price={item.price} />
+	{/each}
+</div>
 <MenuSection
 	title="Dessert"
 	description="Crispy, crunchy, and craveable - These Filipino spring rolls are deep fried and ready to rock! Share 'em, dip 'em, enjoy!"
 	image={mamiImgObj}
 />
-<div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4"></div>
+<div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4">
+	{#each desserts as item, index}
+		<SmallItem id={index} title={item.title} price={item.price} />
+	{/each}
+</div>

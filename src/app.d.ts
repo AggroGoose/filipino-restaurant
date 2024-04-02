@@ -15,6 +15,11 @@ declare global {
 		description: string;
 		priceCents: number;
 	};
+
+	type FbDoc = { title: string; price: number };
+	interface FbDocDesc extends FbDoc {
+		description: string;
+	}
 }
 
 export {};
