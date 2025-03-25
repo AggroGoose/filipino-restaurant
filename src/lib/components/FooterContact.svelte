@@ -23,7 +23,7 @@
 		class="border-[3px] border-white bg-black text-white py-2 px-3 h-44"
 		placeholder="Message"
 		aria-label="Message"
-	/>
+	></textarea>
 	<button
 		class="col-span-2 ml-auto border-[3px] border-yellow-500 text-yellow-500 py-1 px-3 w-max transition-colors duration-500 hover:bg-yellow-500 hover:text-white"
 		>SEND</button

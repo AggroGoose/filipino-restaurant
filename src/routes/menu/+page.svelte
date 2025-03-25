@@ -37,7 +37,12 @@
 />
 <div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4">
 	{#each mami as item, index}
-		<LargeItem id={index} title={item.title} description={item.description} price={item.price} />
+		<LargeItem
+			id={'ma' + index}
+			title={item.title}
+			description={item.description}
+			price={item.price}
+		/>
 	{/each}
 </div>
 <MenuSection
@@ -47,7 +52,12 @@
 />
 <div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4">
 	{#each pancit as item, index}
-		<LargeItem id={index} title={item.title} description={item.description} price={item.price} />
+		<LargeItem
+			id={'pa' + index}
+			title={item.title}
+			description={item.description}
+			price={item.price}
+		/>
 	{/each}
 </div>
 <MenuSection
@@ -57,7 +67,7 @@
 />
 <div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4">
 	{#each lumpia as item, index}
-		<SmallItem id={index} title={item.title} price={item.price} />
+		<SmallItem id={'lu' + index} title={item.title} price={item.price} />
 	{/each}
 </div>
 <MenuSection
@@ -67,7 +77,7 @@
 />
 <div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4">
 	{#each drinks as item, index}
-		<SmallItem id={index} title={item.title} price={item.price} />
+		<SmallItem id={'dr' + index} title={item.title} price={item.price} />
 	{/each}
 </div>
 <MenuSection
@@ -77,6 +87,6 @@
 />
 <div class="grid grid-cols-2 w-full max-w-[950px] mx-auto py-6 gap-4">
 	{#each desserts as item, index}
-		<SmallItem id={index} title={item.title} price={item.price} />
+		<SmallItem id={'de' + index} title={item.title} price={item.price} />
 	{/each}
 </div>

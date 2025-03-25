@@ -1,6 +1,11 @@
 <script>
+	import { shoppingCart } from '$lib/store/cart.svelte';
 	import { page } from '$app/stores';
-	import ShoppingCart from '$lib/svg/ShoppingCart.svelte';
+	import CartIcon from '$lib/svg/CartIcon.svelte';
+	import Cart from './Cart.svelte';
+	let cartOpen = $state(false);
+
+	const handleCart = () => (cartOpen = !cartOpen);
 </script>
 
 <nav>
@@ -18,10 +23,22 @@
 				>HOME</a
 			>
 		{/if}
-		<button
-			><ShoppingCart
-				className={`aspect-square w-8 transition-colors duration-500 ${$page.route.id === '/' ? 'fill-white hover:fill-yellow-500' : 'fill-black hover:fill-blue-500'}`}
-			/></button
-		>
+		<div class="static">
+			<button class="relative" onclick={handleCart}>
+				<CartIcon
+					className={`aspect-square w-8 transition-colors duration-500 ${$page.route.id === '/' ? 'fill-white hover:fill-yellow-500' : 'fill-black hover:fill-blue-500'}`}
+				/>
+				{#if shoppingCart.cart.length >= 1}
+					<p
+						class="absolute top-4 left-4 text-xs min-w-[2em] bg-[#423EF9] rounded-full p-1 text-white"
+					>
+						{shoppingCart.cart.length}
+					</p>
+				{/if}
+			</button>
+			{#if cartOpen}
+				<Cart {handleCart} />
+			{/if}
+		</div>
 	</ul>
 </nav>
