@@ -1,38 +1,9 @@
-n# create-svelte
+# Project Overview
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This project started as a fun concept my wife and I were discussing for a Filipino Restaurant focused on noodles. I decided to attempt drawing up a quick two page restaurant website with a main restaurant overview and a menu page.
 
-## Creating a project
+In this project I used Sveltekit to familiarize myself with Sveltekit 2.0 and Svelte 5 to compare to NextJS/React ecosystem. I used Firebase Firestore as a backend 'API' to pull menu items into the site and play with Sveltekits preload SSR options. Ultimately the interactions were very smooth and were I building an SSR heavy app I'd likely prefer Sveltekit over NextJS, though I still think NextJS ISR and Image optimization are best for a static app.
 
-If you're seeing this, you've probably already done this step. Congrats!
+You could argue that the menu won't change much so this is essentially a static app, but being relatively small in size I don't think the differences are that major.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Ultimately, between the preload files and the smooth interactions with Svelte 5 runes for state management, I continue to find Svelte pleasant to work with.
